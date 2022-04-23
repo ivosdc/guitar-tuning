@@ -1,0 +1,39 @@
+{
+  "name": "guitar-tuning",
+  "version": "0.0.1",
+  "description": "<guitar-tuning> Web-component or svelte component",
+  "svelte": "src/index.js",
+  "module": "dist/build/guitar-tuning.mjs",
+  "main": "dist/build/guitar-tuning.js",
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ivolution.one",
+    "<guitar-tuning/>"
+  ],
+  "author": "Ivo Bozic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivosdc/guitar-tuning/issues"
+  },
+  "homepage": "https://github.com/ivosdc/guitar-tuning#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivosdc/guitar-tuning.git"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^6.0.0",
+    "rollup": "^1.20.0",
+    "rollup-plugin-svelte": "^6.1.1",
+    "svelte": "^3.37.0"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "dependencies": {
+    "tone": "^14.7.77"
+  }
+}
