@@ -14,7 +14,7 @@
         const now = Tone.now()
         currently_playing = getFrequenz(tune).toFixed(2) + ' Hz';
         synth.triggerAttackRelease(getFrequenz(tune), 1.8, now)
-        setTimeout(()=>{
+        setTimeout(() => {
             currently_playing = ' ';
         }, 2000)
     }
@@ -22,16 +22,16 @@
     function getFrequenz(note) {
         const max_octaves = 5;
         const octave = Math.pow(2, max_octaves - (parseInt(note.slice(-1)) + 1));
-        const offset_half_tone = Math.pow(2 , 1/ NOTES.length);
-        let halfTonesFromA1 = getHalfTonesFromA1(note);
-        return chamber_tone / (octave * Math.pow(offset_half_tone , halfTonesFromA1));
+        const offset_half_tone = Math.pow(2, 1 / NOTES.length);
+        let halfTonesFromA = getHalfTonesFromA(note);
+        return chamber_tone / (octave * Math.pow(offset_half_tone, halfTonesFromA));
     }
 
-    function getHalfTonesFromA1(note) {
+    function getHalfTonesFromA(note) {
         const A = 9;
         let indexNote = NOTES.indexOf(note.substring(0, note.length - 1));
         if (indexNote === -1) {
-            indexNote = NOTES_SHARP.indexOf(note.substring(0,note.length - 1));
+            indexNote = NOTES_SHARP.indexOf(note.substring(0, note.length - 1));
         }
         return (A - indexNote);
     }
