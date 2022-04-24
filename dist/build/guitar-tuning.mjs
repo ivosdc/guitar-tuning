@@ -19215,7 +19215,7 @@ var GuitarTuning = (function () {
     class GuitarTuning extends SvelteElement {
     	constructor(options) {
     		super();
-    		this.shadowRoot.innerHTML = `<style>.playing{font-size:larger;height:2em}.guitar-tuning-body{font-family:Calibri, Candara, Arial, Helvetica, sans-serif;display:flex;align-items:center;justify-content:center}.note{margin:0.5em;padding:0.5em;font-size:x-large;cursor:pointer}</style>`;
+    		this.shadowRoot.innerHTML = `<style>.playing{font-size:larger;height:2em}.guitar-tuning-body{font-family:Calibri, Candara, Arial, Helvetica, sans-serif;display:flex;align-items:center;justify-content:center;gap:0.3em}.note{padding:0.3em;font-size:x-large;cursor:pointer}</style>`;
 
     		init(
     			this,
