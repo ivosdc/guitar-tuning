@@ -19779,7 +19779,7 @@ var GuitarTuning = (function () {
     class GuitarTuning extends SvelteElement {
     	constructor(options) {
     		super();
-    		this.shadowRoot.innerHTML = `<style>.fly{padding-bottom:1px;font-size:1.6em;font-weight:bold;color:whitesmoke;cursor:pointer}.note-up-down{display:flex;justify-content:center;height:24px;cursor:pointer}.note-octave{display:grid;grid-template-rows:auto auto auto}.playing{font-size:larger;height:2em}.guitar-tuning-body{font-family:Calibri, Candara, Arial, Helvetica, sans-serif;display:flex;align-items:center;justify-content:center;gap:0.3em}.note{display:flex;justify-content:center;align-items:center;width:40px;height:40px;font-size:1.2em;cursor:pointer;background-color:#6e6e6e;color:#1A1A1A;overflow:hidden;border-radius:100%}</style>`;
+    		this.shadowRoot.innerHTML = `<style>.fly{padding-bottom:1px;font-size:1.4em;font-weight:bolder;color:whitesmoke;cursor:pointer}.note-up-down{display:flex;justify-content:center;height:24px;cursor:pointer}.note-octave{display:grid;grid-template-rows:auto auto auto}.playing{font-size:larger;height:2em}.guitar-tuning-body{font-family:Calibri, Candara, Arial, Helvetica, sans-serif;display:flex;align-items:center;justify-content:center;gap:0.3em}.note{display:flex;justify-content:center;align-items:center;width:40px;height:40px;font-size:1.2em;cursor:pointer;background-color:#6e6e6e;color:#1A1A1A;overflow:hidden;border-radius:100%}</style>`;
 
     		init(
     			this,

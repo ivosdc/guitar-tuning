@@ -109,8 +109,8 @@
 <style>
     .fly {
         padding-bottom: 1px;
-        font-size: 1.6em;
-        font-weight: bold;
+        font-size: 1.4em;
+        font-weight: bolder;
         color: whitesmoke;
         cursor: pointer;
     }

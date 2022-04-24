@@ -1,6 +1,6 @@
 {
   "name": "guitar-tuning",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "<guitar-tuning> Plays the guitar-string tone. Variabel tunings and chamber tone. Web-component or svelte component",
   "svelte": "src/index.js",
   "module": "dist/build/guitar-tuning.mjs",
