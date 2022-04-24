@@ -93,9 +93,9 @@
             <div class="note-up-down" on:click={(event)=>{setTuneUp(event, index)}}>{@html chevron_up}</div>
             <div class="note">
                 {#if index !== isOnChange}
-                        <div id={'note-' + index} on:click={()=>{playNote(tune)}} class="note"
-                             in:fly="{{ y: -24 * invertY , duration: 300 }}"
-                             out:fly="{{ y: 24 * invertY, duration: 300 }}">{tune}</div>
+                        <div id={'note-' + index} on:click={()=>{playNote(tune)}} class="fly"
+                             in:fly="{{ y: -40 * invertY , duration: 300 }}"
+                             out:fly="{{ y: 40 * invertY, duration: 300 }}">{tune}</div>
                 {/if}
             </div>
             <div class="note-up-down" on:click={(event)=>{setTuneDown(event, index)}}>{@html chevron_down}</div>
@@ -107,6 +107,12 @@
 </div>
 
 <style>
+    .fly {
+        padding-bottom: 1px;
+        font-size: 1.6em;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
     .note-up-down {
         display: flex;
@@ -134,14 +140,16 @@
     }
 
     .note {
+        display: flex;
         justify-content: center;
-        text-align: center;
-        min-width: 2em;
-        height: 1.2em;
-        font-size: x-large;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
         cursor: pointer;
         background-color: #6e6e6e;
         color: #1A1A1A;
         overflow: hidden;
+        border-radius: 100%;
     }
 </style>

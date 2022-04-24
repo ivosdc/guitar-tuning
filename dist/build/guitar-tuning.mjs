@@ -19369,7 +19369,7 @@ var GuitarTuning = (function () {
     			div = element("div");
     			t = text(t_value);
     			attr(div, "id", div_id_value = 'note-' + /*index*/ ctx[17]);
-    			attr(div, "class", "note");
+    			attr(div, "class", "fly");
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -19392,7 +19392,7 @@ var GuitarTuning = (function () {
     				if (div_outro) div_outro.end(1);
 
     				div_intro = create_in_transition(div, fly, {
-    					y: -24 * /*invertY*/ ctx[3],
+    					y: -40 * /*invertY*/ ctx[3],
     					duration: 300
     				});
 
@@ -19405,7 +19405,7 @@ var GuitarTuning = (function () {
     			if (div_intro) div_intro.invalidate();
 
     			div_outro = create_out_transition(div, fly, {
-    				y: 24 * /*invertY*/ ctx[3],
+    				y: 40 * /*invertY*/ ctx[3],
     				duration: 300
     			});
 
@@ -19779,7 +19779,7 @@ var GuitarTuning = (function () {
     class GuitarTuning extends SvelteElement {
     	constructor(options) {
     		super();
-    		this.shadowRoot.innerHTML = `<style>.note-up-down{display:flex;justify-content:center;height:24px;cursor:pointer}.note-octave{display:grid;grid-template-rows:auto auto auto}.playing{font-size:larger;height:2em}.guitar-tuning-body{font-family:Calibri, Candara, Arial, Helvetica, sans-serif;display:flex;align-items:center;justify-content:center;gap:0.3em}.note{justify-content:center;text-align:center;min-width:2em;height:1.2em;font-size:x-large;cursor:pointer;background-color:#6e6e6e;color:#1A1A1A;overflow:hidden}</style>`;
+    		this.shadowRoot.innerHTML = `<style>.fly{padding-bottom:2px;font-size:1.6em;font-weight:bold;cursor:pointer}.note-up-down{display:flex;justify-content:center;height:24px;cursor:pointer}.note-octave{display:grid;grid-template-rows:auto auto auto}.playing{font-size:larger;height:2em}.guitar-tuning-body{font-family:Calibri, Candara, Arial, Helvetica, sans-serif;display:flex;align-items:center;justify-content:center;gap:0.3em}.note{display:flex;justify-content:center;align-items:center;width:40px;height:40px;font-size:1.2em;cursor:pointer;background-color:#6e6e6e;color:#1A1A1A;overflow:hidden;border-radius:100%}</style>`;
 
     		init(
     			this,
