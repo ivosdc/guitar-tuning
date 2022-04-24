@@ -111,6 +111,7 @@
         padding-bottom: 1px;
         font-size: 1.6em;
         font-weight: bold;
+        color: whitesmoke;
         cursor: pointer;
     }
 
