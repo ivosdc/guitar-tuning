@@ -5,6 +5,7 @@
     const NOTES_SHARP = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 
     export let tuning = ["E2", "A2", "D3", "G3", "B3", "E4"];
+    $: tuning = typeof tuning === 'string' ? JSON.parse(tuning) : tuning;
     export let chamber_tone = 440;
 
     let currently_playing = ' ';

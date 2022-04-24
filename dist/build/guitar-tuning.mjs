@@ -19036,7 +19036,7 @@ var GuitarTuning = (function () {
     	return child_ctx;
     }
 
-    // (42:4) {#each tuning as tune}
+    // (43:4) {#each tuning as tune}
     function create_each_block(ctx) {
     	let div;
     	let t_value = /*tune*/ ctx[9] + "";
@@ -19179,11 +19179,11 @@ var GuitarTuning = (function () {
     		const max_octaves = 5;
     		const octave = Math.pow(2, max_octaves - (parseInt(note.slice(-1)) + 1));
     		const offset_half_tone = Math.pow(2, 1 / NOTES.length);
-    		let halfTonesFromA1 = getHalfTonesFromA1(note);
-    		return chamber_tone / (octave * Math.pow(offset_half_tone, halfTonesFromA1));
+    		let halfTonesFromA = getHalfTonesFromA(note);
+    		return chamber_tone / (octave * Math.pow(offset_half_tone, halfTonesFromA));
     	}
 
-    	function getHalfTonesFromA1(note) {
+    	function getHalfTonesFromA(note) {
     		const A = 9;
     		let indexNote = NOTES.indexOf(note.substring(0, note.length - 1));
 
@@ -19201,6 +19201,12 @@ var GuitarTuning = (function () {
     	$$self.$$set = $$props => {
     		if ('tuning' in $$props) $$invalidate(0, tuning = $$props.tuning);
     		if ('chamber_tone' in $$props) $$invalidate(3, chamber_tone = $$props.chamber_tone);
+    	};
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*tuning*/ 1) {
+    			 $$invalidate(0, tuning = typeof tuning === 'string' ? JSON.parse(tuning) : tuning);
+    		}
     	};
 
     	return [tuning, currently_playing, playNote, chamber_tone, click_handler];

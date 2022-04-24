@@ -15,6 +15,9 @@
         <span id="pitch-up" class="pitch-tune">></span>
     </div>
     <guitar-tuning id="guitar-tuning"></guitar-tuning>
+    <div>
+        <span id="set-tuning" class="pitch-tune"></span>
+    </div>
     <p>
         <a class="link-me" href="https://github.com/ivosdc/guitar-tuning" target="_blank">License & Source</a>
     </p>
@@ -31,6 +34,19 @@
     pitchDown.onclick = setPitchDown;
     let chamber_pitch = document.getElementById('chamber_pitch');
     chamber_pitch.innerHTML = pitch.toString() + " Hz";
+
+    let tuningSwitch = document.getElementById('set-tuning');
+    tuningSwitch.onclick = setTuning;
+    let toggleTuning = true;
+    setTuning();
+
+    function setTuning() {
+        let tune = toggleTuning ? ["E2", "A2", "D3", "G3", "B3", "E4"] : ["D2", "G2", "C3", "F#3", "A3", "D4"];
+        guitarTuning.setAttribute('tuning', JSON.stringify(tune));
+        toggleTuning = !toggleTuning;
+        tune = toggleTuning ? ["E2", "A2", "D3", "G3", "B3", "E4"] : ["D2", "G2", "C3", "F#3", "A3", "D4"];
+        tuningSwitch.innerHTML = 'switch: ' + tune.toString();
+    }
 
     function setPitchUp() {
         pitch++;
@@ -49,7 +65,7 @@
 <style>
     .pitch-tune {
         font-family: Calibri, Candara, Arial, Helvetica, sans-serif;
-        font-size: larger;
+        font-size: 1.5em;
     }
 
     body {
